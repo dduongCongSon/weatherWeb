@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/alert"
 import { useForecastQuery, useReverseGeocodeQuery, useWeatherQuery } from "@/hooks/use-weather";
 import CurrentWeather from "@/components/current-weather";
+import HourlyTemperature from "@/components/hourly-temperature";
 
 const WeatherDashboard = () => {
   const {
@@ -26,6 +27,7 @@ const WeatherDashboard = () => {
   const locationQuery = useReverseGeocodeQuery(coordinates);
 
   console.log(weatherQuery);
+  console.log(weatherQuery.data);
 
   const hanldeRefresh = () => {
     getLocation();
@@ -35,6 +37,7 @@ const WeatherDashboard = () => {
       locationQuery.refetch();
     }
   };
+
 
   if (locationLoading) {
     return <WeatherSkeleton />
@@ -89,7 +92,7 @@ const WeatherDashboard = () => {
     )
   }
 
-  if (!weatherQuery.isLoading || !forecastQuery.isLoading) {
+  if (!weatherQuery.data || !forecastQuery.data) {
     return <WeatherSkeleton />
   }
 
@@ -109,7 +112,7 @@ const WeatherDashboard = () => {
       <div className="grid gap-6">
         <div>
           <CurrentWeather data={weatherQuery.data} locationName={locationName}/>
-          {/* dasipewpsxa */}
+          {/* <HourlyTemperature data={forecastQuery.data}/> */}
         </div>  
 
         <div>
