@@ -2,7 +2,6 @@ import React from "react";
 import { Button } from "../components/ui/button";
 import { MapPin, RefreshCw } from "lucide-react";
 import { useGeolocation } from "@/hooks/use-geolocation";
-import clsx from "clsx";
 import WeatherSkeleton from "@/components/loading-skeleton";
 import { AlertCircle } from "lucide-react"
 import {
@@ -27,9 +26,6 @@ const WeatherDashboard = () => {
   const weatherQuery = useWeatherQuery(coordinates);
   const forecastQuery = useForecastQuery(coordinates);
   const locationQuery = useReverseGeocodeQuery(coordinates);
-
-  console.log(weatherQuery);
-  console.log(weatherQuery.data);
 
   const hanldeRefresh = () => {
     getLocation();
