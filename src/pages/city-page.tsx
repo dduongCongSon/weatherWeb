@@ -9,6 +9,7 @@ import CurrentWeather from "@/components/current-weather.tsx";
 import HourlyTemperature from "@/components/hourly-temperature.tsx";
 import WeatherDetails from "@/components/weather-details.tsx";
 import WeatherForecast from "@/components/weather-forecast.tsx";
+import FavoriteButton from '@/components/favorite-button';
 
 const CityPage = () => {
   const [searchParams] = useSearchParams()
@@ -41,6 +42,9 @@ const CityPage = () => {
       <div className="space-y-4">
         <div className="flex justify-between items-center">
           <h1 className="text-3xl font-bold tracking-tight">{params.cityName}, {weatherQuery.data.sys.country}</h1>
+          <div>
+            <FavoriteButton data={{...weatherQuery.data, name: params.cityName}}/>
+          </div>
         </div>
         <div className="grid gap-6">
           <div className="flex flex-col gap-4">
