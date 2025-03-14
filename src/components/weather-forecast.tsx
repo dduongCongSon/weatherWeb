@@ -1,11 +1,8 @@
 import type { ForecastData } from '@/api/types';
 import { format } from 'date-fns';
-import React from 'react'
 import {
     Card,
     CardContent,
-    CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"

@@ -1,5 +1,4 @@
 ﻿import { WeatherData } from "@/api/types.ts";
-import { data } from "react-router-dom";
 import { Compass, Gauge, Sunrise, Sunset } from "lucide-react";
 import { format } from "date-fns";
 import {

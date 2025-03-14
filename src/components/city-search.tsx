@@ -53,9 +53,6 @@ const CitySearch = () => {
                     onValueChange={setQuery}/>
                 <CommandList>
                     {query.length > 2 && !isLoading && <CommandEmpty>No cities found.</CommandEmpty>}
-                    {/*<CommandGroup heading="Favorite">*/}
-                    {/*    <CommandItem>Calendar</CommandItem>*/}
-                    {/*</CommandGroup>*/}
                     {history.length > 0 && (<>
                             <CommandSeparator/>
                             <CommandGroup>
