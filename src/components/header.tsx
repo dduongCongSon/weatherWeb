@@ -7,12 +7,13 @@ import CitySearch from "./city-search";
 const header = () => {
   const { theme, setTheme } = useTheme();
   const isDark = theme === "dark";
+  const cloudinaryLogo = "https://res-console.cloudinary.com/dbke1s5nm/media_explorer_thumbnails/6007604ba94bab82eb4bd708d1bd0ff5/detailed";
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur py-2 supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 justify-between items-center px-4">
         <Link to={"/"}>
-          <img src="/public/8504230.png" alt="LogoPage" className="h-14" />
+          <img src={cloudinaryLogo} alt="LogoPage" className="h-14" />
         </Link>
         <div className="flex gap-4">
           <CitySearch />
